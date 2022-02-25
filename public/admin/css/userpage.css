@@ -1,0 +1,321 @@
+$baseColor: #398B93;
+$borderRadius: 10px;
+$imageBig: 100px;
+$imageSmall: 60px;
+$padding: 10px;
+
+body {
+   background-color: lighten($baseColor, 30%);
+   * { box-sizing: border-box; }
+}
+
+.header {
+   background-color: darken($baseColor, 5%);
+   color: Black;
+   font-size: 1.5em;
+   padding: 1rem;
+   text-align: center;
+   text-transform: uppercase;
+}
+
+td img {
+   border-radius: 50%;
+   height: 100px;
+   width: 100px;
+}
+
+.table-users {
+   margin: 15%;
+   border: 1px solid darken($baseColor, 5%);
+   border-radius: $borderRadius;
+   box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+   max-width: calc(100% - 2em);
+  /* margin: 1em auto;*/
+   overflow: hidden;
+   width: 800px;
+}
+
+table {
+   width: 100%;
+   
+   td, th { 
+      color: darken($baseColor, 10%);
+      padding: $padding; 
+   }
+   
+   td {
+      text-align: center;
+      vertical-align: middle;
+      
+      &:last-child {
+         font-size: 0.95em;
+         line-height: 1.4;
+         text-align: left;
+      }
+   }
+   
+   th { 
+      background-color: lighten($baseColor, 50%);
+      font-weight: 300;
+   }
+   
+   tr {     
+      &:nth-child(2n) { background-color: white; }
+      &:nth-child(2n+1) { background-color: lighten($baseColor, 55%) }
+   }
+}
+
+@media screen and (max-width: 700px) {   
+   table, tr, td { display: block; }
+   
+   td {
+      &:first-child {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         width: $imageBig;
+      }
+
+      &:not(:first-child) {
+         clear: both;
+         margin-left: $imageBig;
+         padding: 4px 20px 4px 90px;
+         position: relative;
+         text-align: left;
+
+         &:before {
+            color: lighten($baseColor, 30%);
+            content: '';
+            display: block;
+            left: 0;
+            position: absolute;
+         }
+      }
+
+      &:nth-child(2):before { content: 'Name:'; }
+      &:nth-child(3):before { content: 'Email:'; }
+      &:nth-child(4):before { content: 'Phone:'; }
+      &:nth-child(5):before { content: 'Comments:'; }
+   }
+   
+   tr {
+      padding: $padding 0;
+      position: relative;
+      &:first-child { display: none; }
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .header {
+      background-color: transparent;
+      color: lighten($baseColor, 60%);
+      font-size: 2em;
+      font-weight: 700;
+      padding: 0;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+   }
+   
+   img {
+      border: 3px solid;
+      border-color: lighten($baseColor, 50%);
+      height: $imageBig;
+      margin: 0.5rem 0;
+      width: $imageBig;
+   }
+   
+   td {
+      &:first-child { 
+         background-color: lighten($baseColor, 45%); 
+         border-bottom: 1px solid lighten($baseColor, 30%);
+         border-radius: $borderRadius $borderRadius 0 0;
+         position: relative;   
+         top: 0;
+         transform: translateY(0);
+         width: 100%;
+      }
+      
+      &:not(:first-child) {
+         margin: 0;
+         padding: 5px 1em;
+         width: 100%;
+         
+         &:before {
+            font-size: .8em;
+            padding-top: 0.3em;
+            position: relative;
+         }
+      }
+      
+      &:last-child  { padding-bottom: 1rem !important; }
+   }
+   
+   tr {
+      background-color: white !important;
+      border: 1px solid lighten($baseColor, 20%);
+      border-radius: $borderRadius;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+      margin: 0.5rem 0;
+      padding: 0;
+   }
+   
+   .table-users { 
+      border: none; 
+      box-shadow: none;
+      overflow: visible;
+   }
+}
+
+/*-------------------------------- Appointment Card ----------------------------------------*/
+
+.myCard{
+
+background-color: rgba(255, 255, 255, 0.998);
+border-radius: 20px;
+box-shadow: 0px 0px 15px 5px rgba(95, 87, 76, 0.335);
+margin: 1% 0% 1% 0%;
+transition: 0.3s;
+
+
+}
+
+.singleBookingCard{
+            background-color: rgba(251, 228, 190, 0.998);
+            background-image: url("/webimg/card3.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height:auto;
+        }
+        .singleBookingCard:hover{
+       
+            box-shadow: 2px 2px 10px 5px rgba(65, 61, 56, 0.411);
+            background-color: rgba(253, 219, 156, 0.998);
+            transition: 0.3s;
+            
+        }   
+
+         /* Accpted card */
+        .singleBookingCardAcc{
+            background-color: rgba(208, 255, 194, 0.998) !important;
+            
+        }
+        .singleBookingCardAcc:hover{
+       
+   
+            background-color: rgba(193, 253, 175, 0.998) !important;
+          
+            
+        } 
+            /* Rejected Card */
+            .singleBookingCardRej{
+                background-color: rgba(251, 199, 190, 0.998);
+               
+            }
+            .singleBookingCardRej:hover{
+
+              
+                background-color: rgba(253, 156, 156, 0.998);
+            
+                
+            } 
+
+            /* Pending Card */
+            .singleBookingCardPen{
+                background-color: rgba(201, 232, 253, 0.998);
+          
+          
+            }
+            .singleBookingCardPen:hover{
+
+         
+                background-color: rgba(156, 214, 253, 0.998);
+        
+                
+            } 
+
+            .my-card-heading{
+    margin: 0;
+    text-align: center;
+    margin-top:10px;
+    margin-bottom:18px;
+    color:rgba(0, 0, 0, 0.781) ;
+    font-size: 25px;;
+}
+
+.cp-marginSet{
+    margin-top:20px !important;
+}
+
+ .b-desc{
+        background-color: rgba(255, 251, 245, 0.829);
+        margin: 2% 6% 1% 6%;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border-radius: 20px;
+        overflow: hidden;
+    }       
+
+    .b-desc p{
+        margin-left: 8%;
+    color:rgba(41, 20, 1, 0.795);
+    } 
+    .b-desc h5{
+        margin-left: 8%;
+        color:rgba(46, 23, 1, 0.856);
+        
+    } 
+
+    .cp-b-desc{
+    font-size: 22px !important;
+}
+.cp-b-desc h5{
+    font-size: 22px !important;
+}
+
+.ButtonAccept
+                {
+                    margin: 1.5% 0% 10% 40%;
+                    height:50px !important;
+            box-shadow: 3px 5px 10px 2px rgba(95, 95, 95, 0.534);
+            background-color:  #44d450 !important;
+            color:rgba(255, 255, 255, 0.911);
+            border: none !important;
+            font-size: 18px !important;
+
+
+                }
+                .ButtonAccept:hover
+                {
+                    
+                color:rgba(255, 255, 255, 0.911) !important;
+            
+ 
+                }
+                .ButtonReject
+                {
+                
+                background-color:  #d44444 !important;
+                color:rgba(255, 255, 255, 0.911);
+                border: none !important;
+                 font-size: 18px !important;
+
+
+                }
+                .ButtonReject:hover
+                {
+                    
+            color:rgba(255, 255, 255, 0.911) !important;
+            
+ 
+                }
+
+                .my-dbcard-btn{
+   
+    height:50px !important;
+    box-shadow: 3px 5px 10px 2px rgba(95, 95, 95, 0.534);
+    background-color:  #2e2e2e;
+    color:rgba(255, 255, 255, 0.87);
+   
+   
+    
+    font-size: 16px !important;
+}
